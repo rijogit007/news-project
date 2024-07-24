@@ -1,0 +1,23 @@
+#card1:hover {
+
+    border-radius: 10px;
+    overflow: auto;
+    
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.3s ease;
+}
+
+html,body{
+
+overflow: hidden;
+
+
+}

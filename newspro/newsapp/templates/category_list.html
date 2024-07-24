@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/card1.css' %}">
+</head>
+<body style="background-color: black;">
+
+<div class="container">
+<div class="ticker" >
+ 
+<h1 style="position: relative; left:400px; color:white">BREAKING NEWS</h1>
+<a style="position: absolute; top: 10px; left:10px;   "  href="{% url 'home_view' %}">LOGOUT</a> 
+
+<div>
+
+
+<marquee behavior="" direction=""  class="marquee"  style="width: 100rem;    background-color:brown; position:relative; right:20%; height:80px;   " >
+
+
+<h1 style="position: relative; top:10px" >BREAKING NEWS:BUISNESS,SPORTS,ENTERTAINMENT,LIFESTYLE,POLITICS</p></h1>
+
+
+
+
+</marquee>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+  
+
+{% if messages %}
+{% for i in messages %}
+
+
+
+{% if i.level ==  DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+<div class="alert alert-warning alert-dismissible fade show" role=alert>
+<strong>{{i}}</strong>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+{% endfor %}  
+{% endif %}
+
+<h1></h1>
+
+<div class="container">
+  <div class="row">
+    {% for category in categories %}
+      <div id="card1" class="col-lg-4" >
+        <div class="card" style="width: 15rem; height: 20rem;" >
+          <img style="width:15rem; height:12rem;" src="{{ category.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ category.name }}</h5>
+            <a href="{% url 'news_list' category.pk %}" class="btn btn-primary">VIEW</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>  
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  crossorigin="anonymous"></script>
+
+
+
+
+
+
+</body>
+</html>

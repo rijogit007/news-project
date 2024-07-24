@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+      </head>
+      <body class="rbody">
+        <div class="signup-box">
+          <h1>Sign Up</h1>
+          <h4>It's free and only takes a minute</h4>
+          <form class="rform" action="" method="post">
+
+            {%  csrf_token %}
+            <label>First Name</label>
+            <input type="text" placeholder="enter first name"  name="first_name">
+            <label>Last Name</label>
+            <input type="text" placeholder="enter lastname" name="last_name">
+            <label>Email</label>
+            <input type="email" placeholder="enter email"  name="email">
+            <label>Username</label>
+            <input type="text" placeholder="enter username" name="username">
+            <label>Password</label>
+            <input type="password" placeholder="enter password" name="password"><br><br>
+
+            <input type="submit" value="button">
+
+          </form>
+         
+        </div>
+        <p class="para-2">
+          Already have an account? <a href="{% url 'login_view'  %}">Login here</a>
+        </p>
+      </body>
+    </html></span>
